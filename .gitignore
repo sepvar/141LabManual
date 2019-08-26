@@ -1,0 +1,53 @@
+# Ignore the HTML files; they will be created from the XML source.
+*.html
+# Ignore the prj files as they are for WinEdit
+ManualXML.prj
+ManualXML.prj.bak
+# Ignore the fall-lab-manual files as output from XML
+fall-lab-manual.aux
+fall-lab-manual.bbl
+fall-lab-manual.blg
+fall-lab-manual.html
+fall-lab-manual.log
+fall-lab-manual.out
+fall-lab-manual.pdf
+fall-lab-manual.synctex
+fall-lab-manual.synctex(busy)
+fall-lab-manual.tex
+fall-lab-manual.toc
+# Ignore the PASCO lesson files as they are for CAPSTONE
+PASCO-lesson.pdf
+PASCO-lesson.pptx
+# Ignore creation of modified file
+121-Lab-Manual-mod.xml
+# Ignore the 121-Lab-Manual files as output from XML
+121-Lab-Manual.aux
+121-Lab-Manual.bbl
+121-Lab-Manual.blg
+121-Lab-Manual.html
+121-Lab-Manual.log
+121-Lab-Manual.out
+121-Lab-Manual.synctex
+121-Lab-Manual.synctex(busy)
+121-Lab-Manual.toc
+121-Lab-Manual.idx
+121-Lab-Manual.sed
+121-Lab-Manual.xml.*
+# Ignore the extracted lab pdfs prior to compression
+*_big.pdf
+# Ignore the TMC-lab-setup files as output from XML
+TMC-lab-setup.aux
+TMC-lab-setup.bbl
+TMC-lab-setup.blg
+TMC-lab-setup.html
+TMC-lab-setup.log
+TMC-lab-setup.out
+TMC-lab-setup.synctex
+TMC-lab-setup.synctex(busy)
+TMC-lab-setup.toc
+# Ignore the extracted lab pdfs prior to compression
+*_big.pdf
+minimal-*
+step*
+list*
+build*
