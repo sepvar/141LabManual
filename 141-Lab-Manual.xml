@@ -599,8 +599,14 @@
     change as the number of data items in the set increases.  What can you infer about the accuracy and about the precision of the
     data as more and more observations are made?</p></li>
     <li><p> Show that the standard deviation of the mean varies inversely as the square root of the number of data items in the sample.
-    How well does the data in this lab agree with this prediction?   (Make a graph of the standard deviation of the mean versus the
-    square root of the number of data items in the sample.)</p></li>
+    How well does the data in this lab agree with this prediction?   
+    <ul>
+	    <li><p>If you are drawing graphs by hand, you can do this by graphing the standard deviation of the mean versus the 
+			    inverse square root of the number of data items in the sample. If this is the dependence, then it should be linear.</p></li>
+	    <li><p>If you are using Excel, you can do this by fitting your graph of the standard deviation of the mean versus the 
+			    number of data items in the sample to a power-fit. If this is the dependence, then the power should be <m>-0.5</m>.</p></li>
+    </ul></p>
+    </li>
     </ul></p>
 
     </section>
@@ -760,16 +766,20 @@
                 </exercise>
 <!-- \setcounter{dave}{\theenumi} -->
 
-        <p>We will take four sets of data: a slow, constant velocity towards the ranger; a slow, constant velocity away from the ranger;
-        a faster, constant velocity towards the ranger; and a faster, constant velocity away from the ranger.
-        The two slow speeds should be about the same and the two faster speeds should be about the same.
+	<p>Before taking data for the lab, develop your familiarity with the equipment by playing with making velocity versus time measurements.  
+	Make a graph of a slow cart moving forwards and a fast cart moving backwards to see what the difference looks like on a graph.
+	Push a cart forwards and backwards to see what this looks like on the graph.  These trial-runs should help you take your actual data
+	more efficiently and effectively.</p>
+
+        <p>For your lab report, take two sets of data: a constant velocity towards the ranger and a constant velocity away from the ranger.
+        The two speeds should be, to the best of your ability, about the same.
         For each case, start the sonic ranger and then bump the cart firmly, but not violently(!).</p>
 
-        <p>On Capstone, you should have four curves of velocity versus time.
+        <p>On Capstone, you should have two curves of velocity versus time.
         Fit each with a trendline and display the equation of the trendline on the screen.
         Interpret the coefficients (slope and intercept) by noting their units, values, and uncertainties.
-        You should also print out (in landscape mode) the position versus time graph, the velocity versus time graph,
-        and the acceleration versus time graph.  (You should notice that the acceleration versus time graph is <em>very</em> noisy.)</p>
+        You should also print out (in landscape mode) the position versus time graph and the velocity versus time graph.
+        (Although you should not include the acceleration versus time graph, if you view it in Capstone, you should notice that it is <em>very</em> noisy.)</p>
 
         </subsection>
 
@@ -826,9 +836,9 @@
                 </exercise>
 <!-- \setcounter{dave}{\theenumi} -->
 
-        <p>In Capstone, you should be able to display all three graphs (position v time, velocity v time, and acceleration v time).
+        <p>In Capstone, you should be able to display both the position vs time graph and the velocity vs time graph.
         You should also be able to display all three cases of data on each of these graphs.
-        On the velocity versus time graph, fit each of the three graphs with a linear trendline.
+        On the velocity versus time graph, fit each of the graphs with a linear trendline.
         The next section will ask you to analyze how well the data match up to these lines.
         (It might be interesting to also fit the position vs time curves to parabolas.
         Be sure to print out copies of your three graphs.</p>
@@ -871,7 +881,7 @@
                 <exercise>
                     <statement>
                         <p> If the slopes are different, then discuss any pattern that you see.
-                        If the slopes are (essentially) the same, then find an average and a standard deviation of the four values.</p>
+				If the slopes are (essentially) the same, then find an average and a standard deviation of the different values.</p>
                     </statement>
                 </exercise>
                 <exercise xml:id="q-speed-acc">
@@ -880,7 +890,7 @@
                     </statement>
                 </exercise>
 <!-- \setcounter{dave}{\theenumi} -->
-        <p>Discuss any evidence observed in your data when answering these questions.
+        <p>In answering these questions, discuss any evidence observed in your data.
         Also consider the magnitude of the uncertainties when writing your conclusions.</p>
 
         </subsection>
@@ -970,6 +980,204 @@
 
 </chapter>
 
+
+<!-- ********************************************************************************************** -->
+
+<chapter xml:id="c-springs"><title>Hooke's Law and Simple Harmonic Motion</title>
+
+    <objectives>
+    <introduction>
+    <p>The stiffness of springs can be measured by stretching or by bouncing.  Because we do not have an independent verification of the value of the stiffness of the spring, we will need to be clever about how to verify the relevant equations.  It turns out that the measurement of stiffness through bouncing gives a value for the spring constant, whereas the measurement of stiffness by hanging involves both the spring constant and the acceleration due to gravity.  </p>
+    </introduction>
+    <ul>
+    <li><p>By measuring and graphing
+        <ul>
+        <li><p>the relationship between mass and elongation when stretching a spring and</p></li>
+        <li><p>the relationship between mass and the period of a bouncing spring, </p></li>
+        </ul>
+        we can compute the value of the acceleration due to gravity and thereby verify the relationships describing the stretch of a spring.</p></li>
+    </ul>
+<!--
+    Experimentally determine and compare the spring constant <m>(k)</m> of a spring as determined by Hooke's Law and
+    also with the SHM period formula.
+-->
+    </objectives>
+
+<introduction><title>Introduction</title>
+
+    <p>Oscillatory motion is one of the most common types of motions and can occur in any physical system.
+    Mechanical systems can experience a periodic motion, and then will vibrate at a natural frequency.
+    This phenomenon is called resonance.  Sound is a vibration in the air, which we hear with our ears;
+    light is an oscillation of electric and magnetic fields, which we can see.  The atoms and molecules in
+    all objects are in a state of continual vibration, which we can detect as the temperature of the object,
+    and the atomic vibrations of a quartz crystal can be used as a very accurate timer.  The study of
+    repetitive motion is not just an intellectual exercise, but actually enables us to model complicated
+    systems with simple harmonic motion.</p>
+
+    <p>In this lab, we will consider spring as an example of oscillation.  This oscillation is due to the
+    elasticity of a spring.  We will need to measure the stiffness of the spring and relate this to the rate of oscillation.</p>
+
+    <p>Most systems have <term>elastic</term> properties, such that when the system is deformed or vibrated,
+    there is a force which tries to restore the system to its original state.  Note that measuring how well 
+    a system returns to its original shape is a measure of the system's elasticity. If the restoring
+    force is proportional to the displacement from its equilibrium position, then the object is
+    said to be in simple harmonic motion (SHM).  A linear restoring force can be expressed
+    mathematically by the equation
+    <men xml:id="eq-hooke">
+    \vec F= -k\vec x \hspace{.5cm} \mbox{or as} \hspace{.5cm}  a= \frac{d^2x}{dt^2} = -\frac{kx}{m}
+    </men>
+    where <m>F</m> is the <term>restoring force</term>, <m>x</m> is the <term>elongation</term> (the displacement from the equilibrium position, which is also called the <q>zero position</q>), <m>k</m> is a proportionality constant, and the minus sign indicates that the
+    restoring force is always opposite the direction of the displacement.  For a spring system, <m>k</m>
+    is called the <term>spring constant</term>, and represents the ratio of the applied force to the elongation.
+    The spring constant is an inherent physical property of the spring itself (an elastic property).
+    The value of <m>k</m> gives a relative indication of the stiffness of the spring.  If the spring
+    system is in equilibrium  <m>(\sum F_i =0)</m>  then the restoring force is equal to the force
+    pulling on the spring, and this force is proportional to the extension of the spring from its equilibrium
+    position.  This relationship for elastic behavior is known as Hooke's law, after Robert Hooke (1635-1703).
+    </p>
+
+        <p>We can investigate Hooke's law by hanging a mass on a spring, measuring the stretch, and plotting the mass versus the elongation.
+        If we rewrite <xref ref="eq-hooke" text="type-global">Equation</xref> relating the mass to the elongation
+        <men xml:id="eq-hooke-stretching"> m = \left[ \frac{k}{g} \right] x </men>
+        then we see an equation of the form <m>y=mx+\cancelto{0}{b}</m>, where the slope depends on both <m>k</m> and <m>g</m>.</p>
+
+<!-- <p>Notice that for the previous equation to be valid,  the acceleration must have the same functional form as the displacement.
+    One function for which this would be true is the cosine function, that is, that both the acceleration and the displacement
+    can be represented by cosine functions.</p>
+    -->
+
+    <p>Simple Harmonic Motion (SHM) systems can
+    <!-- therefore -->
+    be described by harmonic functions (cosines), where the displacement as a function of the time <m>x(t)</m> can be written as
+    <me>	x(t) = A \cos(2\pi f t) </me>
+    where <m>A</m> is the amplitude of the motion, and <m>f</m> is the frequency of the motion in units of cycles per second
+    <m>(\mathrm{sec}^{-1})</m> commonly called a hertz (Hz) after Heinrich Hertz.
+    The period (<m>T</m>, in units of seconds per cycle) equals the inverse of the frequency <m>(f)</m>,
+    <m>T=\phantom{1}^1\!\!/_f</m>.  For a mass on a spring, the period <m>T</m> depends on the physical parameters of the system
+    (the mass, and the spring constant), and can be given by
+    <men xml:id="eq-hookeperiod"> T=2\pi \sqrt{\frac{m}{k}} </men>
+    </p>
+
+        <p xml:id="p-hooke-bouncing">We can investigate this relationship by bouncing a mass on a spring, measuring the period, and plotting the mass versus the period.
+        If we rewrite <xref ref="eq-hookeperiod" text="global">Equation</xref> relating the mass to the period
+        <men xml:id="eq-hooke-bouncing"> m = \left[ k \right] \left( \frac{T}{2\pi} \right)^2 </men>
+        then we see an equation of the form <m>y=ax^2+\cancelto{0}{b}x+\cancelto{0}{c}</m>, where the coefficient only depends on <m>k</m>.  Although this is a nonlinear relationship, we can <xref ref="quadratic" text="title">linearize</xref> the expression to find the parameter (slope with uncertainty) more easily.  (See <xref ref="nonlinear" text="type-global" /> for more discussion.)  You may also note that <m>T/2\pi</m> is a more convenient variable than <m>T</m> by itself because it produces a slope equal to <m>k</m> rather than <m>k/(2\pi)^2</m>.</p>
+
+        <p>When you compare these relationships of the spring, you should be able to find a value for the acceleration due to gravity as a verification of these two equations.</p>
+
+</introduction>
+
+<section xml:id="s-hooke-pre"><title>Pre-Lab Considerations</title>
+
+    <p>
+    <ul>
+        <li><p> Make a sketch of your expectation for the displacement of a mass on a spring as a function of the time.</p></li>
+        <li><p> On this graph, locate and label:  the equilibrium positions <m>(x=0)</m>, and the places of
+            maximum and minimum velocity.</p></li>
+        <li><p> Based on the information in the introduction, make a sketch of the pull force as a function
+            of the displacement from the equilibrium position (initial position).</p></li>
+    </ul>
+    </p>
+
+</section> <section xml:id="s-hooke-procedure"><title>Procedure</title>
+
+    <subsection xml:id="sss-hooke"><title>Hooke's law</title>
+
+        <p>We will first measure the elasticity of the spring, using <xref ref="eq-hooke" text="type-global">Equation</xref>.
+        <ul>
+            <li><p> With the available spring, attach it rigidly and hang it vertically against the Dynamics Track.
+                Hang various masses and measure the elongation of the spring, to a maximum of 60 cm.
+                Do not over stretch the spring.  Record the bottom end of the mass hanger for the initial reference position.
+                If a tapered spring is used, the small end should be at the top.</p></li>
+            <li><p> Measure the elongation both when the masses are added and then when they are removed.</p>
+                <p><em>Perfectly elastic</em> objects (possibly your spring) will return to the exact same location when pulled
+                with the same force whether they are being stretched out or being allowed to relax back after stretching.</p>
+                <p>Objects that are elastic, but not perfectly elastic, will return to approximately the same location, but might retain some deformation.</p></li>
+            <li><p> You will be graphing the relationship between the mass and the displacement, <xref ref="eq-hooke-stretching" text="title">Equation</xref>.</p></li>
+        </ul>
+        </p>
+
+    </subsection>
+    <subsection xml:id="sss-bounce"><title>Oscillating Spring</title>
+
+    <p>We will next consider the periodicity of an oscillating spring.
+    <ul>
+        <li><p> With the same range of masses as in <xref ref="sss-hooke" text="type-global" />,  measure the period of oscillation for each mass.
+        You <em>can</em> but do not <em>have to</em> use the same values of mass, as long as the set of masses sampled are in the same range.
+        </p></li>
+        <li><p> You will be graphing the relationship between the mass and the period, <xref ref="eq-hooke-bouncing" text="title">Equation</xref>.
+            I <xref ref="p-hooke-bouncing" text="title">recommend</xref> using <m>T/(2\pi)</m> as the variable representing the period
+            (because it gives nice results for the graphical parameters -- slope and intercept).
+        </p></li>
+        <li><p> <alert>Advice</alert>: Keep the amplitude of vibration small,  because there is a small but measurable effect
+            with the period as a function of the amplitude.
+        </p></li>
+    </ul>
+    </p>
+
+    </subsection>
+</section> <section xml:id="s-hooke-analysis"><title>Analysis</title>
+
+    <p>
+    <ul>
+        <li><p> Graph both data sets (<xref ref="sss-hooke" text="type-global" /> and <xref ref="sss-bounce" text="type-global" />)
+            in such a way that the spring constant can be determined graphically (from a <xref ref="quadratic" text="title">linear fit</xref> model).
+        <ul>
+            <li><p> When you graph the relationship between the mass and the displacement, recall that <xref ref="eq-hooke" text="type-global">Equation</xref>
+                depends on two specific parameters.</p></li>
+            <li><p> When you graph the relationship between the mass and the period, recall that <xref ref="eq-hookeperiod" text="type-global">Equation</xref>
+                depends on one specific parameter.</p></li>
+            <li><p> With some effort, you should be able to recognize the units of the slope and intercept and find the relevant values of those parameters.</p></li>
+            </ul>
+        </p></li>
+        <li><p> Physically interpret the meaning and value for the slopes, and the x and y intercepts for both graphs.</p></li>
+        <li><p> Calculate the spring constant for both data sets, using a linear regression method.</p></li>
+        <li><p> So far in the analysis, the mass of the spring has been neglected.  How would including the spring mass
+            (or a partial %) affect the slopes or intercepts of the two graphs?</p>
+            <p>For the period graph, one would expect to get a zero period with a zero mass.  Why?  What was your observation for the  y-intercept?
+            If the data was modified by adding a constant amount of mass to each mass value  (say 1/3 the mass of the spring)
+            and then re-compute the linear regression, then  what happens to the slope and intercept values?
+            And do you get a higher linear correlation coefficient?</p></li>
+        <li><p> If you assume a value for <m>g</m>, then both graphs will give you <m>k</m>.
+            <xref ref="considerations-compare" text="title">Compare</xref> the precision for these two methods.</p></li>
+        <li><p> If you do not assume a value for <m>g</m>, then you can use one graph to find <m>k</m> and
+            use this calculated value and the other graph to compute <m>g</m>.  How does this value of <m>g</m> compare to
+            your expectations?</p></li>
+        <li><p> Compare the elongations when the masses were added and then removed.  Explain any differences.  Is your spring perfectly elastic?</p></li>
+        <li><p> Quantify the major sources of uncertainty in this experiment.  Which of the experimental measurements has
+            the largest relative uncertainty?</p></li>
+    </ul></p>
+
+    </section>
+    <exercises><title>Questions</title>
+
+        <exercise>
+            <statement><p> Why should the amplitude of vibration be kept as small as possible?</p></statement>
+        </exercise>
+        <exercise>
+            <statement><p> Is the spring totally elastic?  (Does the elongation return to the same position when the masses are removed?)</p></statement>
+        </exercise>
+        <exercise>
+            <statement><p> Based on the data, which method do you think is more precise?</p></statement>
+        </exercise>
+        <exercise>
+            <statement><p> Does the force of gravity affect the value of  <m>k</m> (as derived from each method)?  Why or  why not?</p></statement>
+        </exercise>
+        <exercise>
+            <statement><p> If this experiment were conducted on the moon, would either method give a different result for the value of <m>k</m>?
+                Explain.</p></statement>
+        </exercise>
+
+    </exercises>
+
+    <conclusion>
+    <p>(Revised: Oct 11, 2017)</p> <!-- Clarified linearization, added cross-referencing links. -->
+<!-- Revisions \revised{(Aug 27, 2012)} -->
+    <p>A PDF version might be found at <url href="http://physics.thomasmore.edu/Labs/141/springs.pdf">springs.pdf (122 kB)</url></p>
+    <p>Copyright and license information can be found <url href="http://physics.thomasmore.edu/Labs/141/general-fall-colophon.html">here</url>.</p>
+    </conclusion>
+
+</chapter>
 
 <!-- ********************************************************************************************** -->
 
@@ -2363,203 +2571,6 @@
         \revised{Sep 1, 2008}
         -->
     <p>A PDF version might be found at <url href="http://physics.thomasmore.edu/Labs/141/peer.pdf">peer.pdf (47 kB)</url></p>
-    <p>Copyright and license information can be found <url href="http://physics.thomasmore.edu/Labs/141/general-fall-colophon.html">here</url>.</p>
-    </conclusion>
-
-</chapter>
-
-<!-- ********************************************************************************************** -->
-
-<chapter xml:id="c-springs"><title>Hooke's Law and Simple Harmonic Motion</title>
-
-    <objectives>
-    <introduction>
-    <p>The stiffness of springs can be measured by stretching or by bouncing.  Because we do not have an independent verification of the value of the stiffness of the spring, we will need to be clever about how to verify the relevant equations.  It turns out that the measurement of stiffness through bouncing gives a value for the spring constant, whereas the measurement of stiffness by hanging involves both the spring constant and the acceleration due to gravity.  </p>
-    </introduction>
-    <ul>
-    <li><p>By measuring and graphing
-        <ul>
-        <li><p>the relationship between mass and elongation when stretching a spring and</p></li>
-        <li><p>the relationship between mass and the period of a bouncing spring, </p></li>
-        </ul>
-        we can compute the value of the acceleration due to gravity and thereby verify the relationships describing the stretch of a spring.</p></li>
-    </ul>
-<!--
-    Experimentally determine and compare the spring constant <m>(k)</m> of a spring as determined by Hooke's Law and
-    also with the SHM period formula.
--->
-    </objectives>
-
-<introduction><title>Introduction</title>
-
-    <p>Oscillatory motion is one of the most common types of motions and can occur in any physical system.
-    Mechanical systems can experience a periodic motion, and then will vibrate at a natural frequency.
-    This phenomenon is called resonance.  Sound is a vibration in the air, which we hear with our ears;
-    light is an oscillation of electric and magnetic fields, which we can see.  The atoms and molecules in
-    all objects are in a state of continual vibration, which we can detect as the temperature of the object,
-    and the atomic vibrations of a quartz crystal can be used as a very accurate timer.  The study of
-    repetitive motion is not just an intellectual exercise, but actually enables us to model complicated
-    systems with simple harmonic motion.</p>
-
-    <p>In this lab, we will consider spring as an example of oscillation.  This oscillation is due to the
-    elasticity of a spring.  We will need to measure the stiffness of the spring and relate this to the rate of oscillation.</p>
-
-    <p>Most systems have elastic properties, such that when the system is deformed or vibrated,
-    there is a force which tries to restore the system to its original state.  If the restoring
-    force is proportional to the displacement from its equilibrium position, then the object is
-    said to be in simple harmonic motion (SHM).  A linear restoring force can be expressed
-    mathematically by the equation
-    <men xml:id="eq-hooke">
-    \vec F= -k\vec x \hspace{.5cm} \mbox{or as} \hspace{.5cm}  a= \frac{d^2x}{dt^2} = -\frac{kx}{m}
-    </men>
-    where <m>F</m> is the <term>restoring force</term>, <m>x</m> is the <term>elongation</term> (the displacement from the equilibrium position, which is also called the <q>zero position</q>), <m>k</m> is a proportionality constant, and the minus sign indicates that the
-    restoring force is always opposite the direction of the displacement.  For a spring system, <m>k</m>
-    is called the <term>spring constant</term>, and represents the ratio of the applied force to the elongation.
-    The spring constant is an inherent physical property of the spring itself (an elastic property).
-    The value of <m>k</m> gives a relative indication of the stiffness of the spring.  If the spring
-    system is in equilibrium  <m>(\sum F_i =0)</m>  then the restoring force is equal to the force
-    pulling on the spring, and this force is proportional to the extension of the spring from its equilibrium
-    position.  This relationship for elastic behavior is known as Hooke's law, after Robert Hooke (1635-1703).
-    </p>
-
-        <p>We can investigate Hooke's law by hanging a mass on a spring, measuring the stretch, and plotting the mass versus the elongation.
-        If we rewrite <xref ref="eq-hooke" text="type-global">Equation</xref> relating the mass to the elongation
-        <men xml:id="eq-hooke-stretching"> m = \left[ \frac{k}{g} \right] x </men>
-        then we see an equation of the form <m>y=mx+\cancelto{0}{b}</m>, where the slope depends on both <m>k</m> and <m>g</m>.</p>
-
-<!-- <p>Notice that for the previous equation to be valid,  the acceleration must have the same functional form as the displacement.
-    One function for which this would be true is the cosine function, that is, that both the acceleration and the displacement
-    can be represented by cosine functions.</p>
-    -->
-
-    <p>Simple Harmonic Motion (SHM) systems can
-    <!-- therefore -->
-    be described by harmonic functions (cosines), where the displacement as a function of the time <m>x(t)</m> can be written as
-    <me>	x(t) = A \cos(2\pi f t) </me>
-    where <m>A</m> is the amplitude of the motion, and <m>f</m> is the frequency of the motion in units of cycles per second
-    <m>(\mathrm{sec}^{-1})</m> commonly called a hertz (Hz) after Heinrich Hertz.
-    The period (<m>T</m>, in units of seconds per cycle) equals the inverse of the frequency <m>(f)</m>,
-    <m>T=\phantom{1}^1\!\!/_f</m>.  For a mass on a spring, the period <m>T</m> depends on the physical parameters of the system
-    (the mass, and the spring constant), and can be given by
-    <men xml:id="eq-hookeperiod"> T=2\pi \sqrt{\frac{m}{k}} </men>
-    </p>
-
-        <p xml:id="p-hooke-bouncing">We can investigate this relationship by bouncing a mass on a spring, measuring the period, and plotting the mass versus the period.
-        If we rewrite <xref ref="eq-hookeperiod" text="global">Equation</xref> relating the mass to the period
-        <men xml:id="eq-hooke-bouncing"> m = \left[ k \right] \left( \frac{T}{2\pi} \right)^2 </men>
-        then we see an equation of the form <m>y=ax^2+\cancelto{0}{b}x+\cancelto{0}{c}</m>, where the coefficient only depends on <m>k</m>.  Although this is a nonlinear relationship, we can <xref ref="quadratic" text="title">linearize</xref> the expression to find the parameter (slope with uncertainty) more easily.  (See <xref ref="nonlinear" text="type-global" /> for more discussion.)  You may also note that <m>T/2\pi</m> is a more convenient variable than <m>T</m> by itself because it produces a slope equal to <m>k</m> rather than <m>k/(2\pi)^2</m>.</p>
-
-        <p>When you compare these relationships of the spring, you should be able to find a value for the acceleration due to gravity as a verification of these two equations.</p>
-
-</introduction>
-
-<section xml:id="s-hooke-pre"><title>Pre-Lab Considerations</title>
-
-    <p>
-    <ul>
-        <li><p> Make a sketch of your expectation for the displacement of a mass on a spring as a function of the time.</p></li>
-        <li><p> On this graph, locate and label:  the equilibrium positions <m>(x=0)</m>, and the places of
-            maximum and minimum velocity.</p></li>
-        <li><p> Based on the information in the introduction, make a sketch of the pull force as a function
-            of the displacement from the equilibrium position (initial position).</p></li>
-    </ul>
-    </p>
-
-</section> <section xml:id="s-hooke-procedure"><title>Procedure</title>
-
-    <subsection xml:id="sss-hooke"><title>Hooke's law</title>
-
-        <p>We will first measure the elasticity of the spring, using <xref ref="eq-hooke" text="type-global">Equation</xref>.
-        <ul>
-            <li><p> With the available spring, attach it rigidly and hang it vertically against the Dynamics Track.
-                Hang various masses and measure the elongation of the spring, to a maximum of 60 cm.
-                Do not over stretch the spring.  Record the bottom end of the mass hanger for the initial reference position.
-                If a tapered spring is used, the small end should be at the top.</p></li>
-            <li><p> Measure the elongation both when the masses are added and then when they are removed.</p>
-                <p><em>Perfectly elastic</em> objects (possibly your spring) will return to the exact same location when pulled
-                with the same force whether they are being stretched out or being allowed to relax back after stretching.</p>
-                <p>Objects that are elastic, but not perfectly elastic, will return to approximately the same location, but might retain some deformation.</p></li>
-            <li><p> You will be graphing the relationship between the mass and the displacement, <xref ref="eq-hooke-stretching" text="title">Equation</xref>.</p></li>
-        </ul>
-        </p>
-
-    </subsection>
-    <subsection xml:id="sss-bounce"><title>Oscillating Spring</title>
-
-    <p>We will next consider the periodicity of an oscillating spring.
-    <ul>
-        <li><p> With the same range of masses as in <xref ref="sss-hooke" text="type-global" />,  measure the period of oscillation for each mass.
-        You <em>can</em> but do not <em>have to</em> use the same values of mass, as long as the set of masses sampled are in the same range.
-        </p></li>
-        <li><p> You will be graphing the relationship between the mass and the period, <xref ref="eq-hooke-bouncing" text="title">Equation</xref>.
-            I <xref ref="p-hooke-bouncing" text="title">recommend</xref> using <m>T/(2\pi)</m> as the variable representing the period
-            (because it gives nice results for the graphical parameters -- slope and intercept).
-        </p></li>
-        <li><p> <alert>Advice</alert>: Keep the amplitude of vibration small,  because there is a small but measurable effect
-            with the period as a function of the amplitude.
-        </p></li>
-    </ul>
-    </p>
-
-    </subsection>
-</section> <section xml:id="s-hooke-analysis"><title>Analysis</title>
-
-    <p>
-    <ul>
-        <li><p> Graph both data sets (<xref ref="sss-hooke" text="type-global" /> and <xref ref="sss-bounce" text="type-global" />)
-            in such a way that the spring constant can be determined graphically (from a <xref ref="quadratic" text="title">linear fit</xref> model).
-        <ul>
-            <li><p> When you graph the relationship between the mass and the displacement, recall that <xref ref="eq-hooke" text="type-global">Equation</xref>
-                depends on two specific parameters.</p></li>
-            <li><p> When you graph the relationship between the mass and the period, recall that <xref ref="eq-hookeperiod" text="type-global">Equation</xref>
-                depends on one specific parameter.</p></li>
-            <li><p> With some effort, you should be able to recognize the units of the slope and intercept and find the relevant values of those parameters.</p></li>
-            </ul>
-        </p></li>
-        <li><p> Physically interpret the meaning and value for the slopes, and the x and y intercepts for both graphs.</p></li>
-        <li><p> Calculate the spring constant for both data sets, using a linear regression method.</p></li>
-        <li><p> So far in the analysis, the mass of the spring has been neglected.  How would including the spring mass
-            (or a partial %) affect the slopes or intercepts of the two graphs?</p>
-            <p>For the period graph, one would expect to get a zero period with a zero mass.  Why?  What was your observation for the  y-intercept?
-            If the data was modified by adding a constant amount of mass to each mass value  (say 1/3 the mass of the spring)
-            and then re-compute the linear regression, then  what happens to the slope and intercept values?
-            And do you get a higher linear correlation coefficient?</p></li>
-        <li><p> If you assume a value for <m>g</m>, then both graphs will give you <m>k</m>.
-            <xref ref="considerations-compare" text="title">Compare</xref> the precision for these two methods.</p></li>
-        <li><p> If you do not assume a value for <m>g</m>, then you can use one graph to find <m>k</m> and
-            use this calculated value and the other graph to compute <m>g</m>.  How does this value of <m>g</m> compare to
-            your expectations?</p></li>
-        <li><p> Compare the elongations when the masses were added and then removed.  Explain any differences.  Is your spring perfectly elastic?</p></li>
-        <li><p> Quantify the major sources of uncertainty in this experiment.  Which of the experimental measurements has
-            the largest relative uncertainty?</p></li>
-    </ul></p>
-
-    </section>
-    <exercises><title>Questions</title>
-
-        <exercise>
-            <statement><p> Why should the amplitude of vibration be kept as small as possible?</p></statement>
-        </exercise>
-        <exercise>
-            <statement><p> Is the spring totally elastic?  (Does the elongation return to the same position when the masses are removed?)</p></statement>
-        </exercise>
-        <exercise>
-            <statement><p> Based on the data, which method do you think is more precise?</p></statement>
-        </exercise>
-        <exercise>
-            <statement><p> Does the force of gravity affect the value of  <m>k</m> (as derived from each method)?  Why or  why not?</p></statement>
-        </exercise>
-        <exercise>
-            <statement><p> If this experiment were conducted on the moon, would either method give a different result for the value of <m>k</m>?
-                Explain.</p></statement>
-        </exercise>
-
-    </exercises>
-
-    <conclusion>
-    <p>(Revised: Oct 11, 2017)</p> <!-- Clarified linearization, added cross-referencing links. -->
-<!-- Revisions \revised{(Aug 27, 2012)} -->
-    <p>A PDF version might be found at <url href="http://physics.thomasmore.edu/Labs/141/springs.pdf">springs.pdf (122 kB)</url></p>
     <p>Copyright and license information can be found <url href="http://physics.thomasmore.edu/Labs/141/general-fall-colophon.html">here</url>.</p>
     </conclusion>
 
