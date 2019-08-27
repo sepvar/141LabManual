@@ -102,7 +102,7 @@
         <edition>Annual Edition 2019</edition>
 
         <website>
-            <name><c>TMC Physics</c></name>
+            <name><c>TMU Physics</c></name>
             <address>http://www.thomasmore.edu/physics/</address>
         </website>
 
@@ -131,20 +131,20 @@
                 <row><cell />
                     <cell><line>B.S. Mathematics and Physics, Bradley University, IL (1990)</line>
                           <line>Ph.D. Physics, University of Kentucky, KY (1997)</line>
-                          <line>first came to Thomas More Universityin 2007</line></cell></row>
+                          <line>first came to Thomas More University in 2007</line></cell></row>
                 <row><cell /><cell /></row>
                 <row><cell colspan="2">Wes Ryle: </cell></row>
                 <row><cell />
                     <cell><line>B.S. Mathematics and Physics, Western Kentucky University, KY (2003)</line>
                           <line>M.S. Physics, Georgia State University, GA (2006)</line>
                           <line>Ph.D. Astronomy, Georgia State University, GA (2008)</line>
-                          <line>first came to Thomas More Universityin 2008</line></cell></row>
+                          <line>first came to Thomas More University in 2008</line></cell></row>
                 <row><cell /><cell /></row>
                 <row><cell colspan="2">Jack Wells: </cell></row>
                 <row><cell />
                     <cell><line>B.S. Physics, State University of New York at Oneonta, Oneonta, NY (1975) </line>
                           <line>M.S. Physics, University of Toledo, Toledo, OH (1978)</line>
-                          <line>first came to Thomas More Universityin 1980</line></cell></row>
+                          <line>first came to Thomas More University in 1980</line></cell></row>
             </tabular>
         </sidebyside>
 
@@ -968,7 +968,8 @@
     </section>
 
     <conclusion>
-    <p>(Revised: September 13, 2017)</p> <!-- Validated and fixed the exercises -->
+    <p>(Revised: August 27, 2019)</p> <!-- Revised expectations.  Procedure does fast and slow as getting used to the equipment (not actual data).  -->
+    <!-- <p>(Revised: September 13, 2017)</p> Validated and fixed the exercises -->
     <!-- <p>(Revised: September 8, 2017)</p> Provided <hint>s and <answers>s to the <exercise>s -->
     <!--    Revisions \revised{Sept. 14, 2015}
         \revision{Sept. 14, 2015}{Commented out Graphs and Tracks.  Updated Pasco Reference from DataStudio to Capstone}
@@ -1136,8 +1137,7 @@
             (or a partial %) affect the slopes or intercepts of the two graphs?</p>
             <p>For the period graph, one would expect to get a zero period with a zero mass.  Why?  What was your observation for the  y-intercept?
             If the data was modified by adding a constant amount of mass to each mass value  (say 1/3 the mass of the spring)
-            and then re-compute the linear regression, then  what happens to the slope and intercept values?
-            And do you get a higher linear correlation coefficient?</p></li>
+            and then re-compute the linear regression, then  what happens to the slope and intercept values?  </p></li>
         <li><p> If you assume a value for <m>g</m>, then both graphs will give you <m>k</m>.
             <xref ref="considerations-compare" text="title">Compare</xref> the precision for these two methods.</p></li>
         <li><p> If you do not assume a value for <m>g</m>, then you can use one graph to find <m>k</m> and
@@ -1171,7 +1171,8 @@
     </exercises>
 
     <conclusion>
-    <p>(Revised: Oct 11, 2017)</p> <!-- Clarified linearization, added cross-referencing links. -->
+    <p>(Revised: Aug 27, 2019)</p> <!-- Defined Elastic -->
+    <!-- <p>(Revised: Oct 11, 2017)</p> Clarified linearization, added cross-referencing links. -->
 <!-- Revisions \revised{(Aug 27, 2012)} -->
     <p>A PDF version might be found at <url href="http://physics.thomasmore.edu/Labs/141/springs.pdf">springs.pdf (122 kB)</url></p>
     <p>Copyright and license information can be found <url href="http://physics.thomasmore.edu/Labs/141/general-fall-colophon.html">here</url>.</p>
